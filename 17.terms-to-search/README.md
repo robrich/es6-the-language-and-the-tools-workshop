@@ -11,3 +11,5 @@ We've just scratched the surface on ES6 features, and in what Webpack can do.  Y
 - cinemagraph - otherwise still pictures with one moving element
 - [https://github.com/lukehoban/es6features](https://github.com/lukehoban/es6features)
 - [http://es6katas.org/](http://es6katas.org/)
+- [http://code.hootsuite.com/webpack-101/](http://code.hootsuite.com/webpack-101/)
+- [https://medium.com/@rajaraodv/webpack-the-confusing-parts-58712f8fcad9#.8fy5vtrqu](https://medium.com/@rajaraodv/webpack-the-confusing-parts-58712f8fcad9#.8fy5vtrqu)

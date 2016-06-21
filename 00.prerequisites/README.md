@@ -24,8 +24,10 @@ From a terminal inside a new directory:
 
 1. Make an empty directory
 
-2. `npm install -g webpack eslint`
+2. clone the `https://github.com/robrich/es6-the-language-and-the-tools-workshop` git repository
 
-3. `npm install babel-core babel-loader babel-preset-es2015`
+3. `npm install -g webpack eslint`
+
+4. `npm install babel-core babel-loader babel-preset-es2015`
 
 These commands may take a while the first time, so just get them kicked off while we dig in.
