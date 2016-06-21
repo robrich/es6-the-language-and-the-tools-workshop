@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+  <title>Weird external libraries</title>
+</head>
+<body>
+  <h1>Weird external libraries</h1>
+  <p>Open the F12 developer tools and see the script</p>
+  <p>Generate the script:</p>
+  <pre>
+npm install
+npm install -g webpack
+webpack
+  </pre>
+  <div id="container">
+    <p>Running the script will output results here:</p>
+  </div>
+  <script src="jquery.min.js"></script><!-- included directly in the page, so exclude it from the bundle -->
+  <script src="handlebars.min.js"></script><!-- doesn't play well with module loaders -->
+  <script src="bundle.js"></script>
+</body>
+</html>

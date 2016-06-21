@@ -1,0 +1,15 @@
+{
+  // configuring env and plugins: http://eslint.org/docs/user-guide/configuring
+  // adding rules: http://eslint.org/docs/rules/
+  // rule: 0=off, 1=warn, 2=error
+  "extends": "eslint:recommended",
+  "parser": "babel-eslint",
+  "env": {
+    // I write for browser
+    "browser": true,
+    // in CommonJS
+    "node": true,
+    // with ES6
+    "es6": true
+  }
+}

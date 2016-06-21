@@ -1,0 +1,18 @@
+{
+  "name": "hello-libraries",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "scripts": {
+    "webpack": "webpack"
+  },
+  "keywords": [],
+  "author": "Rob Richardson <robrich@robrich.org> (https://robrich.org/)",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.9.1",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "webpack": "^1.13.1"
+  }
+}

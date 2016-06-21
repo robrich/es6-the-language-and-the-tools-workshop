@@ -1,0 +1,23 @@
+{
+  "name": "hello-hot-module-replacement",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "scripts": {
+    "webpack": "webpack",
+    "webpack-dev-server": "webpack-dev-server --inline --watch --hot"
+  },
+  "keywords": [],
+  "author": "Rob Richardson <robrich@robrich.org> (https://robrich.org/)",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.9.1",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  },
+  "dependencies": {
+    "jquery": "^3.0.0"
+  }
+}

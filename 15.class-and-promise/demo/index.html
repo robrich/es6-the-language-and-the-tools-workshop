@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+  <title>Class and Promise</title>
+</head>
+<body>
+  <h1>Development Time</h1>
+  <p>Open the F12 developer tools and see the script</p>
+  <p>Generate the script:</p>
+  <pre>
+npm install
+npm install -g webpack
+webpack
+  </pre>
+  <form id="runit">
+    <input type="number" id="x" value="3" style="width: 60px" />
+    <select id="operator">
+      <option>+</option>
+      <option>-</option>
+      <option>*</option>
+      <option>/</option>
+    </select>
+    <input type="number" id="y" value="3" style="width: 60px" />
+    <input type="submit" value="Compute" />
+  </form>
+  <p>Results:</p>
+  <div id="container">
+  </div>
+  <script src="bundle.js"></script>
+</body>
+</html>
