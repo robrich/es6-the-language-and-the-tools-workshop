@@ -1,8 +1,5 @@
 {
   // configuring env and plugins: http://eslint.org/docs/user-guide/configuring
-  // adding rules: http://eslint.org/docs/rules/
-  // rule: 0=off, 1=warn, 2=error
-  "extends": "eslint:recommended",
   "parser": "babel-eslint",
   "env": {
     // I write for browser
@@ -11,5 +8,11 @@
     "node": true,
     // with ES6
     "es6": true
+  },
+  // adding rules: http://eslint.org/docs/rules/
+  // rule: 0=off, 1=warn, 2=error
+  "extends": "eslint:recommended",
+  "rules": {
+    // select the rules that match the goals and standards of your team
   }
 }

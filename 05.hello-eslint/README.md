@@ -34,6 +34,7 @@ Adding ESLint to your IDE
 - Sublime: https://github.com/roadhump/SublimeLinter-eslint
 - Atom: https://atom.io/packages/eslint
 - Webstorm: built in, see https://www.jetbrains.com/help/webstorm/2016.1/eslint.html?origin=old_help
+- IntelliJ: Use the ESLint plugin, see also [https://plugins.jetbrains.com/plugin/7494](https://plugins.jetbrains.com/plugin/7494)
 - Visual Studio: https://visualstudiogallery.msdn.microsoft.com/6edc26d4-47d8-4987-82ee-7c820d79be1d or .NET Core Preview Tooling: http://stackoverflow.com/questions/36034652/integrate-eslint-with-visual-studio-2015
 - Visual Studio Code: built in, see https://code.visualstudio.com/Updates#_linters
 

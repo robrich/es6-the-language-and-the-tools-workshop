@@ -5,7 +5,8 @@
   "description": "",
   "scripts": {
     "webpack": "webpack",
-    "eslint": "eslint ."
+    "eslint": "eslint .",
+    "test": "eslint ."
   },
   "keywords": [],
   "author": "Rob Richardson <robrich@robrich.org> (https://robrich.org/)",
