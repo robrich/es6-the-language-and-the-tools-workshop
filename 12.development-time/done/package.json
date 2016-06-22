@@ -4,7 +4,8 @@
   "private": true,
   "description": "",
   "scripts": {
-    "webpack": "webpack"
+    "webpack": "webpack",
+    "webpack-watch": "webpack --watch"
   },
   "keywords": [],
   "author": "Rob Richardson <robrich@robrich.org> (https://robrich.org/)",

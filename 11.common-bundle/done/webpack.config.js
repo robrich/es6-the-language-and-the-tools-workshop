@@ -4,7 +4,7 @@ module.exports = {
   entry: {
     hello: './hello',
     goodbye: './goodbye',
-    common: ['jquery'],
+    common: ['jquery']
   },
   output: {
     filename: '[name].bundle.js'

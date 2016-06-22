@@ -1,7 +1,7 @@
+/*global window:false */
+
 import $ from 'jquery';
 const Handlebars = window.Handlebars; // handlebars doesn't play well with webpack
-
-/*global window:false */
 
 let template = `<div>
   <h2>Hello {{name}}</h2>
