@@ -4,7 +4,7 @@ Prerequisites for the ES6 Workshop
 Node
 ----
 
-You'll need [Node](https://nodejs.org) v. 5 or 6 installed.  Node comes with [NPM](https://npmjs.org/) and we'll need npm version 3.
+You'll need [Node](https://nodejs.org) v. 6 or 7 installed.  Node comes with [NPM](https://npmjs.org/) and we'll need npm version 3.
 
 Do you have node and npm installed?  From a terminal:
 

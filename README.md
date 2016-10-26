@@ -7,7 +7,7 @@ Welcome to the ES6 Workshop.  We'll look at the ES6 workflow, leveraging Webpack
 Prerequisites
 -------------
 
-Ensure you have [npm](https://npmjs.org/) v. 3.x, and if not, install / update [Node](https://nodejs.org) to v. 5 or 6.
+Ensure you have [npm](https://npmjs.org/) v. 3.x, and if not, install / update [Node](https://nodejs.org) to v. 6 or 7.
 
 
 Topics
