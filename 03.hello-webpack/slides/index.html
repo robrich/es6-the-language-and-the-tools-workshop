@@ -110,8 +110,9 @@
 .reveal ul.list-style-none {
 	list-style: none;
 }
-img.inline {
-	vertical-align: text-top;
+.reveal section img.inline {
+	vertical-align: text-bottom;
+	height: 0.8em;
 }
 span.polyfill {
 	background: #F0DF22;
@@ -119,6 +120,32 @@ span.polyfill {
 	border-radius: 8px;
 	font-size: .65em;
 	color: black;
+	text-shadow: none;
+}
+.reveal div.left-col {
+	width: 50%;
+	float: left;
+}
+.reveal div.right-col {
+	width: 50%;
+	float: right;
+}
+.reveal div.right-col {
+	width: 50%;
+	float: right;
+}
+.reveal div.left-col-small {
+	width: 33%;
+	float: left;
+}
+.reveal div.right-col-big {
+	width: 67%;
+	float: right;
+}
+.clearfix:after {
+	content: "";
+	display: table;
+	clear: both;
 }
 		</style>
 	</head>
@@ -136,10 +163,10 @@ span.polyfill {
   					<h1>ES6 tools</h1>
   					<p>by Rob Richardson</p>
   					<p>
-  						<a href="https://twiter.com/rob_rich">@rob_rich</a>
+  						<a target="_blank" href="https://twiter.com/rob_rich">@rob_rich</a>
   					</p>
   					<p>
-  						<a href="http://robrich.org/">http://robrich.org/</a>
+  						<a target="_blank" href="http://robrich.org/">http://robrich.org/</a>
   					</p>
           </div>
 				</section>
@@ -204,26 +231,48 @@ webpack main.js bundle.js</code></pre>
     filename: 'bundle.js'
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
-        query: {
-          presets: ['es2015']
-        }
+        use: ['babel-loader']
       }
     ]
   }
 };</code></pre>
-        </section>
+					<p>.babelrc:</p>
+					<pre><code>...</code></pre>
+				</section>
 
-        <section>
-          <h2>Using Webpack with Babel</h2>
-          <p>Then run these from the command line</p>
-          <pre><code>npm install -g webpack
-npm install --save-dev babel-core babel-loader babel-preset-es2015</code></pre>
-        </section>
+				<section>
+					<h2>Using Webpack with Babel</h2>
+					<p>webpack.config.js:</p>
+					<pre><code>...</code></pre>
+					<p>.babelrc:</p>
+					<pre><code>{
+  presets: ['es2015', 'es2016', 'es2017']
+}</code></pre>
+					<p>Then run these from the command line</p>
+					<pre><code>npm install --save-dev webpack babel-core babel-loader
+npm install --save-dev babel-preset-es2015 babel-preset-es2016 babel-preset-es2017
+webpack</code></pre>
+				</section>
+
+				<section>
+					<h2>Babel Presets</h2>
+					<p>TC39 categories</p>
+					<ul>
+						<li>es2015: ES6 features</li>
+						<li>es2016: ES7 features</li>
+						<li>es2017: ES8 features</li>
+						<li>stage-4: Finished: will go to next yearly release.</li>
+						<li>stage-3: Complete spec, initial browser implementations.</li>
+						<li>stage-2: Draft</li>
+						<li>stage-1: Proposal</li>
+						<li>stage-0: Strawman: an idea</li>
+					</ul>
+					<p><small>Source: <a href="https://babeljs.io/docs/plugins/" target="_blank">babeljs.io/docs/plugins/</a></small></p>
+				</section>
 
         <section data-background="img/beach.gif" data-background-transition="none">
           <div class="callout">

@@ -7,11 +7,11 @@ module.exports = {
     jquery: "jQuery" // if I say `import $ from 'jquery'` then hand me the `jQuery` global variable
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel'
+        use: ['babel-loader']
       }
     ]
   }

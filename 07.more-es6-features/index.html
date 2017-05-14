@@ -110,8 +110,9 @@
 .reveal ul.list-style-none {
 	list-style: none;
 }
-img.inline {
-	vertical-align: text-top;
+.reveal section img.inline {
+	vertical-align: text-bottom;
+	height: 0.8em;
 }
 span.polyfill {
 	background: #F0DF22;
@@ -119,6 +120,32 @@ span.polyfill {
 	border-radius: 8px;
 	font-size: .65em;
 	color: black;
+	text-shadow: none;
+}
+.reveal div.left-col {
+	width: 50%;
+	float: left;
+}
+.reveal div.right-col {
+	width: 50%;
+	float: right;
+}
+.reveal div.right-col {
+	width: 50%;
+	float: right;
+}
+.reveal div.left-col-small {
+	width: 33%;
+	float: left;
+}
+.reveal div.right-col-big {
+	width: 67%;
+	float: right;
+}
+.clearfix:after {
+	content: "";
+	display: table;
+	clear: both;
 }
 		</style>
 	</head>
@@ -136,90 +163,114 @@ span.polyfill {
   					<h1>More ES6 Features</h1>
   					<p>by Rob Richardson</p>
   					<p>
-  						<a href="https://twiter.com/rob_rich">@rob_rich</a>
+  						<a target="_blank" href="https://twiter.com/rob_rich">@rob_rich</a>
   					</p>
   					<p>
-  						<a href="http://robrich.org/">http://robrich.org/</a>
+  						<a target="_blank" href="http://robrich.org/">http://robrich.org/</a>
   					</p>
           </div>
 				</section>
 
         <section>
-          <h2><img src="img/babel.png" class="inline" /> Variable Declarations</h2>
+          <h2><img src="img/babel.png" class="inline" /> Building objects</h2>
           <ul>
             <li>Syntactic sugar for declaring variables more easily</li>
           </ul>
         </section>
 
-        <section>
-          <h2><img src="img/babel.png" class="inline" /> Building objects</h2>
-          <p>ES5:</p>
-          <pre><code class="js">var x = 3;
+				<section>
+					<h2><img src="img/babel.png" class="inline" /> Building objects</h2>
+					<div class="clearfix">
+					<div class="left-col">
+					<p>ES5:</p>
+					<pre><code>var x = 3;
 var y = 7;
 var c = {
     x: x,
     y: y
 };</code></pre>
-          <p>ES6:</p>
-          <pre><code class="js">var x = 3;
+					</div>
+					<div class="right-col">
+					<p>ES6:</p>
+					<pre><code>var x = 3;
 var y = 7;
 var c = { x, y };</code></pre>
-        </section>
+					</div>
+					</div>
+				</section>
 
-        <section>
-          <h2><img src="img/babel.png" class="inline" /> Building objects</h2>
-          <p>ES5:</p>
-          <pre><code class="js">var x = 3;
+				<section>
+					<h2><img src="img/babel.png" class="inline" /> Building objects</h2>
+					<div class="clearfix">
+					<div class="left-col">
+					<p>ES5:</p>
+					<pre><code>var x = 3;
 var y = 7;
 var c = {
     x: x,
     y: y,
     z: 9
 };</code></pre>
-          <p>ES6:</p>
-          <pre><code class="js">var x = 3;
+					</div>
+					<div class="right-col">
+					<p>ES6:</p>
+					<pre><code>var x = 3;
 var y = 7;
 var c = {
     x,
     y,
     z: 9
 };</code></pre>
-        </section>
+					</div>
+					</div>
+				</section>
 
-        <section>
-          <h2><img src="img/babel.png" class="inline" /> Destructuring</h2>
-          <p>ES5:</p>
-          <pre><code class="js">var c = { x: 3, y: 7 };
+				<section>
+					<h2><img src="img/babel.png" class="inline" /> Dereferencing objects</h2>
+					<div class="clearfix">
+					<div class="left-col">
+					<p>ES5:</p>
+					<pre><code>var c = { x: 3, y: 7 };
 
 var x = c.x;
 var y = c.y;
 console.log(x); // 3</code></pre>
-          <p>ES6:</p>
-          <pre><code class="js">var c = { x: 3, y: 7 };
+					</div>
+					<div class="right-col">
+					<p>ES6:</p>
+					<pre><code>var c = { x: 3, y: 7 };
 
 let { x, y } = c;
 console.log(x); // 3</code></pre>
-        </section>
+					</div>
+					</div>
+				</section>
 
-        <section>
-          <h2><img src="img/babel.png" class="inline" /> <img src="img/webpack.png" class="inline" /> Destructuring</h2>
-          <p>ES5:</p>
-          <pre><code>
-          </code></pre>
-          <p>ES6:</p>
-          <pre><code class="js">// -------- lib.js --------
+				<section>
+					<h2><img src="img/babel.png" class="inline" /> <img src="img/webpack.png" class="inline" /> Dereferencing objects</h2>
+					<div class="clearfix">
+					<div class="left-col-small">
+					<p>ES5:</p>
+					<pre><code>
+</code></pre>
+					</div>
+					<div class="right-col-big">
+					<p>ES6:</p>
+					<pre><code>// -------- lib.js --------
 export function square(x) {
     return x * x;
 }
 export function double(x) {
-    return x * x;
+    return x * 2;
 }
 
 // -------- main.js --------
-import { square, double } from 'lib';
+import { square, double } from './lib';
 square(4); // 16
 double(4); // 8</code></pre>
-        </section>
+					</div>
+					</div>
+				</section>
 
         <section>
           <h2><img src="img/babel.png" class="inline" /> Rest parameters</h2>
@@ -232,8 +283,10 @@ double(4); // 8</code></pre>
 
         <section>
           <h2><img src="img/babel.png" class="inline" /> Rest parameters</h2>
-          <p>ES5:</p>
-          <pre><code class="js">function (a, b) {
+					<div class="clearfix">
+					<div class="left-col">
+					<p>ES5:</p>
+					<pre><code>function (a, b) {
     var theRest = Array.prototype.slice.call(arguments);
     theRest.shift(); // a
     theRest.shift(); // b
@@ -242,12 +295,16 @@ double(4); // 8</code></pre>
         // ...
     });
 }</code></pre>
+					</div>
+					<div class="right-col">
           <p>ES6:</p>
           <pre><code class="js">function(a, b, ...theRest) {
     theRest.forEach(function () {
         // ...
     });
 }</code></pre>
+					</div>
+					</div>
         </section>
 
         <section>
@@ -261,29 +318,45 @@ double(4); // 8</code></pre>
         <section>
           <h2><img src="img/babel.png" class="inline" /> Spread operator</h2>
           <p>Pass an array like a series of arguments</p>
-          <p>ES5:</p>
-          <pre><code class="js">function myFunction(x, y, z) { }
+					<div class="clearfix">
+					<div class="left-col">
+					<p>ES5:</p>
+					<pre><code>function myFunction(x, y, z) { }
 var args = [0, 1, 2];
 myFunction.apply(null, args);</code></pre>
-          <p>ES6:</p>
-          <pre><code class="js">function myFunction(x, y, z) { }
+					</div>
+					<div class="right-col">
+					<p>ES6:</p>
+					<pre><code>function myFunction(x, y, z) { }
 var args = [0, 1, 2];
 myFunction(...args);</code></pre>
+					</div>
+					</div>
         </section>
 
         <section>
           <h2><img src="img/babel.png" class="inline" /> Spread operator</h2>
           <p>A more powerful array literal</p>
-          <p>ES5:</p>
-          <pre><code class="js">var parts = ['shoulders', 'knees'];
-var lyrics = parts.slice(); // duplicate array
+					<div class="clearfix">
+					<div class="left-col">
+					<p>ES5:</p>
+					<pre><code>var parts = ['shoulders', 'knees'];
+// duplicate array
+var lyrics = parts.slice();
 lyrics.unshift('head');
 lyrics.push('and');
 lyrics.push('toes');
 // ["head", "shoulders", "knees", "and", "toes"]</code></pre>
-          <p>ES6:</p>
-          <pre><code class="js">var parts = ['shoulders', 'knees'];
-var lyrics = ['head', ...parts, 'and', 'toes'];
+					</div>
+					<div class="right-col">
+					<p>ES6:</p>
+					<pre><code>var parts = ['shoulders', 'knees'];
+var lyrics = [
+  'head',
+  ...parts,
+  'and',
+  'toes'
+];
 // ["head", "shoulders", "knees", "and", "toes"]</code></pre>
         </section>
 

@@ -10,6 +10,14 @@ Prerequisites
 Ensure you have [npm](https://npmjs.org/) v. 3.x, and if not, install / update [Node](https://nodejs.org) to v. 6 or 7.
 
 
+Setup
+-----
+
+Run `npm install -g webpack` as we'll run webpack from the command line in each module.
+
+You may find it valuable to run `npm install` in each section's start folder as this can take some time.
+
+
 Topics
 ------
 
@@ -29,7 +37,7 @@ Make yourself a folder, and as you master each topic, add the features to your p
 - How to handle libraries that don't support Webpack
 - Multiple entry points
 - Dev- & Prod-time configs
-- ES6 features: class, Promise
+- ES6 features: class, Promise, and ES8's async/await
 - ES6 in modern frameworks
 - Search terms to continue your study
 
@@ -48,7 +56,7 @@ Accomplishments
 - Microsoft Partner: Silver Independent Software Vendor since 2005
 - Leader, Southeast Valley .NET User Group since 2013
 - Co-Orgaanizer, ng-phx, the Phoenix Angular meetup since 2016
-- Co-Author, SQL Source Control Basics: download eBook | buy on Amazon
+- Co-Author, SQL Source Control Basics
 - Core contributor to gulp v2 and v3
 - Part of the AZGiveCamp organizers
 - .NET Rocks mug recipient

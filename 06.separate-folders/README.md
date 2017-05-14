@@ -17,6 +17,12 @@ Changes from the previous project:
   },
 ```
 
+2. Because we're using `path`, let's import it at the top of the file:
+
+```
+var path = require('path');
+```
+
 
 Try it out
 ----------

@@ -21,7 +21,7 @@ Changes from the previous project:
 
 ```
   plugins: [
-    new webpack.NoErrorsPlugin()
+    new webpack.NoEmitOnErrorsPlugin()
   ]
 ```
 

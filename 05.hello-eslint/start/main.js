@@ -1,5 +1,7 @@
-const anounce = (name) => {
+/*global $:false */
+const announce = (name) => {
+  /*eslint no-console:2 */
   console.log('hello '+name);
   $('body').append('hello '+name);
 }
-anounce('world');
+announce('world');

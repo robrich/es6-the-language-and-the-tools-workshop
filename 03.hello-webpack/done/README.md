@@ -11,7 +11,7 @@ Run these commands from a shell to install webpack, babel, and the necessary res
 
 ```
 npm install -g webpack
-npm install --save-dev babel-core babel-loader babel-preset-es2015
+npm install --save-dev babel-core babel-loader babel-preset-es2015 babel-preset-es2016 babel-preset-es2017
 ```
 
 
@@ -30,10 +30,10 @@ Webpack will create this bundle.js file.
 2. `main.js`: this is the entry point, the starting file, the main JavaScript file in our project.  Fill it with some default content:
 
 ```
-const anounce = (name) => {
+const announce = (name) => {
   console.log('hello '+name);
 }
-anounce('world');
+announce('world');
 ```
 
 3. `webpack.config.js`: this configuration file tells webpack what to do.  Add this content:
@@ -45,22 +45,26 @@ module.exports = {
     filename: 'bundle.js'
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
-        query: {
-          presets: ['es2015']
-        }
+        use: ['babel-loader']
       }
     ]
   }
 };
 ```
 
-We've told it to start with `main.js`, to create `bundle.js`, and to run all the files that end in `.js` through `babel` using the `es2015` rules.
+We've told it to start with `main.js`, to create `bundle.js`, and to run all the files that end in `.js` through `babel`.
 
+4. `.babelrc`: this configuration file tells babel which rule sets to run.  Add this content:
+
+```
+{
+  presets: ['es2015', 'es2016', 'es2017']
+}
+```
 
 Run Webpack
 -----------

@@ -5,7 +5,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Classes and Promises</title>
+		<title>Classes, Promises, and async</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/black.css">
@@ -110,8 +110,9 @@
 .reveal ul.list-style-none {
 	list-style: none;
 }
-img.inline {
-	vertical-align: text-top;
+.reveal section img.inline {
+	vertical-align: text-bottom;
+	height: 0.8em;
 }
 span.polyfill {
 	background: #F0DF22;
@@ -119,6 +120,32 @@ span.polyfill {
 	border-radius: 8px;
 	font-size: .65em;
 	color: black;
+	text-shadow: none;
+}
+.reveal div.left-col {
+	width: 50%;
+	float: left;
+}
+.reveal div.right-col {
+	width: 50%;
+	float: right;
+}
+.reveal div.right-col {
+	width: 50%;
+	float: right;
+}
+.reveal div.left-col-small {
+	width: 33%;
+	float: left;
+}
+.reveal div.right-col-big {
+	width: 67%;
+	float: right;
+}
+.clearfix:after {
+	content: "";
+	display: table;
+	clear: both;
 }
 		</style>
 	</head>
@@ -133,13 +160,13 @@ span.polyfill {
 
         <section data-background="img/grass2.gif">
           <div class="callout">
-  					<h1>Classes and Promises</h1>
+  					<h1>Classes, Promises, and async</h1>
   					<p>by Rob Richardson</p>
   					<p>
-  						<a href="https://twiter.com/rob_rich">@rob_rich</a>
+  						<a target="_blank" href="https://twiter.com/rob_rich">@rob_rich</a>
   					</p>
   					<p>
-  						<a href="http://robrich.org/">http://robrich.org/</a>
+  						<a target="_blank" href="http://robrich.org/">http://robrich.org/</a>
   					</p>
           </div>
 				</section>
@@ -153,42 +180,49 @@ span.polyfill {
           </ul>
         </section>
 
-        <section>
-          <h2><img src="img/babel.png" class="inline" /> Classes</h2>
-          <p>ES5: constructor function / prototype</p>
-          <pre><code>function Person(name) {
+				<section>
+					<h2><img src="img/babel.png" class="inline" /> Classes</h2>
+					<div class="clearfix">
+					<div class="left-col">
+					<p>ES5: constructor function</p>
+					<pre><code>function Person(name) {
     this.name = name;
 }
 Person.prototype.speak = function () {
-    console.log('hello '+this.name;
+    console.log('hello '+this.name);
 };</code></pre>
-          <p>ES6: class</p>
-          <pre><code>class Person {
+					</div>
+					<div class="right-col">
+					<p>ES6: class</p>
+					<pre><code>class Person {
     constructor(name) {
         this.name = name;
     }
     speak() {
-        console.log('hello '+name);
+        console.log('hello '+this.name);
     }
 }</code></pre>
-        </section>
+					</div>
+					</div>
+				</section>
 
-        <section>
-          <h2>Promise</h2>
-          <p><span class="polyfill">Polyfill</span> Asynchronous resolve</p>
-          <ul>
-            <li>proxy for a later result</li>
-            <li>alternate style to callbacks</li>
-            <li>work is only done once for identical parameters</li>
-            <li>religious war: some find it more confusing</li>
-          </ul>
-        </section>
+				<section>
+					<h2><span class="polyfill">Polyfill</span> Promise</h2>
+					<p>Asynchronous resolve</p>
+					<ul>
+						<li>proxy for a later result</li>
+						<li>alternate style to callbacks</li>
+						<li>religious war: some find it more confusing</li>
+					</ul>
+				</section>
 
-        <section>
-          <h2>Promise</h2>
-          <p><span class="polyfill">Polyfill</span> Asynchronous resolve</p>
-          <p>ES5: callback</p>
-          <pre><code>function doWork(cb) {
+				<section>
+					<h2><span class="polyfill">Polyfill</span> Promise</h2>
+					<p>Asynchronous resolve</p>
+					<div class="clearfix">
+					<div class="left-col">
+					<p>ES5: callback</p>
+					<pre><code>function doWork(cb) {
     cb(null, 'results');
 }
 
@@ -198,8 +232,10 @@ doWork(function (err, results) {
     }
     // handle success
 });</code></pre>
-          <p>ES6: promise</p>
-          <pre><code>function doWork() {
+					</div>
+					<div class="right-col">
+					<p>ES6: promise</p>
+					<pre><code>function doWork() {
     return new Promise(function (success, fail) {
         success('result');
     });
@@ -210,6 +246,65 @@ doWork().then(function (result) {
 }).catch(err) {
     // handle error
 });</code></pre>
+				</div>
+				</div>
+				</section>
+
+        <section>
+          <h2><img src="img/babel.png" class="inline" /> async / await</h2>
+          <p>Asynchronous that feels like synchronous</p>
+          <ul>
+            <li>Syntactic sugar over promises and generators</li>
+            <li>religious war: some find it more confusing</li>
+            <li>easy to use it incredibly badly</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2><img src="img/babel.png" class="inline" /> async / await</h2>
+          <div>
+            <img src="img/asyncawait.gif" />
+          </div>
+          <p><small>Source: <a href="https://www.bram.us/2017/05/09/javascript-from-callbacks-to-promises-to-asyncawait-in-7-seconds/" target="_blank">https://www.bram.us/2017/05/09/javascript-from-callbacks-to-promises-to-asyncawait-in-7-seconds/</a></small></p>
+        </section>
+
+        <section>
+          <h2><img src="img/babel.png" class="inline" /> async / await</h2>
+          <div class="clearfix">
+          <div class="left-col">
+          <p>ES6: promise</p>
+          <pre><code>function doWork() {
+  return new Promise(function (success, fail) {
+    success('result');
+  });
+}
+
+doWork().then(function (result) {
+    // handle success
+}).catch(err) {
+    // handle error
+});</code></pre>
+          </div>
+          <div class="right-col">
+          <p>ES8: async / await</p>
+          <pre><code>function sleep(ms = 0) {
+  return new Promise(r => setTimeout(r, ms));
+}
+
+async function doWork() {
+  var result = 'result';
+  await sleep(100);
+  return result;
+}
+
+try {
+  await doWork();
+  // handle success
+} catch (err) {
+  // handle error
+}</code></pre>
+        </div>
+        </div>
         </section>
 
         <section data-background="img/beach.gif" data-background-transition="none">

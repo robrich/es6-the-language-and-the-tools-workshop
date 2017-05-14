@@ -1,7 +1,7 @@
 import $ from 'jquery';
 
-const anounce = (name) => {
+const announce = (name) => {
   console.log('goodbye '+name);
   $('body').append('goodbye '+name);
 }
-anounce('world');
+announce('world');

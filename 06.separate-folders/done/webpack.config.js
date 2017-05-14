@@ -9,11 +9,11 @@ module.exports = {
     publicPath: 'js/', // where the browser will load it from
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel'
+        use: ['babel-loader']
       }
     ]
   }

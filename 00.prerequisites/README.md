@@ -28,6 +28,8 @@ From a terminal inside a new directory:
 
 3. `npm install -g webpack eslint`
 
-4. `npm install babel-core babel-loader babel-preset-es2015`
+4. `npm install babel-core babel-loader`
+
+5. `npm install babel-preset-es2015 babel-preset-es2016 babel-preset-es2017`
 
 These commands may take a while the first time, so just get them kicked off while we dig in.

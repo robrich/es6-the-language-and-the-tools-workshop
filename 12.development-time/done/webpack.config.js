@@ -6,15 +6,15 @@ module.exports = {
     filename: 'bundle.js'
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel'
+        use: ['babel-loader']
       }
     ]
   },
   plugins: [
-    new webpack.NoErrorsPlugin()
+    new webpack.NoEmitOnErrorsPlugin()
   ]
 };

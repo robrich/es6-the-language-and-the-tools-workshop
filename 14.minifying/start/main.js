@@ -1,4 +1,4 @@
-const anounce = (name) => {
+const announce = (name) => {
   console.log('hello '+name);
 }
-anounce('world');
+announce('world');

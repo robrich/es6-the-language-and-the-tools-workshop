@@ -22,8 +22,6 @@ Changes from the previous project:
 
 Since we're not using a real web server, we shim the file path to `file://...` so the browser can load it correctly.
 
-2. We're using `.babelrc` to specify the babel presets instead of the `presets` section in `webpack.config.js`.  Either is fine, and they produce identical results.  The benefit of a `.babelrc` is other tools that use babel like linting tools will also use these presets.
-
 
 Try it out
 ----------
